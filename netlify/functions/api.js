@@ -10,7 +10,7 @@ router.get("/nfcstaff", async (req, res) => {
     const response = await fetch("https://api.airtable.com/v0/appzLdIRMrSF1cK9O/NFC%20Staff", {
         headers: {
             "Content-Type": 'application/json',
-            "Authorization": "Bearer patJZlr6ggpsErJ7n.2c6fcc24fc03b4124ce25fe2e39127a929cdeb7fa2bcaba40097d19612b474c9"
+            "Authorization": "Bearer " + process.env.API_SECRET
         }
     }).then(res => res.json())
     // const data = await response.json();
@@ -22,7 +22,7 @@ router.get("/nfcstaffdetail", async (req, res) => {
     const response = await fetch("https://api.airtable.com/v0/appzLdIRMrSF1cK9O/NFC%20Staff?maxRecords=3&view=Grid%20view", {
         headers: {
             "Content-Type": 'application/json',
-            "Authorization": "Bearer patJZlr6ggpsErJ7n.2c6fcc24fc03b4124ce25fe2e39127a929cdeb7fa2bcaba40097d19612b474c9"
+            "Authorization": "Bearer " + process.env.API_SECRET
         }
     }).then(res => res.json())
     // const data = await response.json();
